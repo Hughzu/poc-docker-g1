@@ -1,18 +1,23 @@
 version: "3.8"
 services:
+  db:
+    image: postgres:14.1-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - '5432:5432'
+    volumes:
+      - db:/var/lib/postgresql/data
   webapi:
     build: ./Docker.WebApi
     ports:
       - '7230:80'
       - '7231:443'
-    #environment:
-      #- ASPNETCORE_ENVIRONMENT=Development
-      #- ASPNETCORE_URLS=https://+:443;http://+:80
-      #- ASPNETCORE_Kestrel__Certificates__Default__Password=Coucou123
-      #- ASPNETCORE_Kestrel__Certificates__Default__Path=app/https/aspnetapp.pfx
-    #volumes: 
-      #- ./https:/app/https/
+    depends_on:
+      - db
 
-#volumes: 
-  #data:
-  #logs:
+volumes:
+  db:
+    driver: local
