@@ -1,4 +1,4 @@
-namespace Docker.WebApi.Data;
+namespace Docker.Data;
 
 public class WeatherDatabaseSettings
 {

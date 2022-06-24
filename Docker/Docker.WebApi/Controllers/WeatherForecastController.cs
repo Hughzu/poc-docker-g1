@@ -1,9 +1,7 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using Docker.WebApi.Data;
-using Docker.WebApi.Domain;
+using Docker.Domain;
+using Docker.Logic;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -14,9 +12,9 @@ namespace Docker.WebApi.Controllers;
 public class WeatherForecastController : ControllerBase
 {
     private readonly ILogger<WeatherForecastController> _logger;
-    private readonly WeatherService _weatherService;
+    private readonly IWeatherService _weatherService;
 
-    public WeatherForecastController(ILogger<WeatherForecastController> logger, WeatherService weatherService)
+    public WeatherForecastController(ILogger<WeatherForecastController> logger, IWeatherService weatherService)
     {
         _logger = logger;
         _weatherService = weatherService;

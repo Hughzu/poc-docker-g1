@@ -2,6 +2,12 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Docker.WebApi", "Docker.WebApi\Docker.WebApi.csproj", "{3B87DA25-7C54-44DA-A3DC-CCB606DE014F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Docker.Domain", "Docker.Domain\Docker.Domain.csproj", "{8AD82B19-A26C-46D6-B9BF-AB0475AD603E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Docker.Data", "Docker.Data\Docker.Data.csproj", "{A207F59D-4264-45CB-8B0B-908D7898B89C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Docker.Logic", "Docker.Logic\Docker.Logic.csproj", "{60CD92E9-22E5-4165-98AE-E2DE411557DA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +18,17 @@ Global
 		{3B87DA25-7C54-44DA-A3DC-CCB606DE014F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B87DA25-7C54-44DA-A3DC-CCB606DE014F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B87DA25-7C54-44DA-A3DC-CCB606DE014F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AD82B19-A26C-46D6-B9BF-AB0475AD603E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AD82B19-A26C-46D6-B9BF-AB0475AD603E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AD82B19-A26C-46D6-B9BF-AB0475AD603E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AD82B19-A26C-46D6-B9BF-AB0475AD603E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A207F59D-4264-45CB-8B0B-908D7898B89C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A207F59D-4264-45CB-8B0B-908D7898B89C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A207F59D-4264-45CB-8B0B-908D7898B89C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A207F59D-4264-45CB-8B0B-908D7898B89C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60CD92E9-22E5-4165-98AE-E2DE411557DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60CD92E9-22E5-4165-98AE-E2DE411557DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60CD92E9-22E5-4165-98AE-E2DE411557DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60CD92E9-22E5-4165-98AE-E2DE411557DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

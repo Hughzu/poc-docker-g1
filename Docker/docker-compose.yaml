@@ -9,9 +9,11 @@ services:
     environment:
       - MONGO_INITDB_DATABASE=weather
   webapi:
-    build: ./Docker.WebApi
+    image: webapi
+    build:
+      context: .
+      dockerfile: ./Docker.WebApi/Dockerfile
     ports:
-      - '7230:80'
-      - '7231:443'
+      - '7230:7230'
     depends_on:
       - mongodb

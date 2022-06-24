@@ -2,9 +2,9 @@ using System;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace Docker.WebApi.Domain;
+namespace Docker.Data;
 
-public class WeatherForecast
+public class WeatherForecastDAO
 {
     [BsonId]
     [BsonRepresentation(BsonType.Int64)]

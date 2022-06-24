@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Docker.Data\Docker.Data.csproj" />
+      <ProjectReference Include="..\Docker.Domain\Docker.Domain.csproj" />
+    </ItemGroup>
+
+</Project>
