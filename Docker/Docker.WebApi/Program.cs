@@ -1,10 +1,14 @@
+using Docker.WebApi.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.Configure<WeatherDatabaseSettings>(
+    builder.Configuration.GetSection("WeatherDatabase"));
+
 // Add services to the container.
+builder.Services.AddSingleton<WeatherService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
