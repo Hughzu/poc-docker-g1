@@ -8,12 +8,24 @@ services:
       - ~/apps/mongo:/data/db
     environment:
       - MONGO_INITDB_DATABASE=weather
-  webapi:
-    image: webapi
+  api:
+    image: api
     build:
       context: .
       dockerfile: ./Docker.WebApi/Dockerfile
     ports:
-      - '7230:7230'
+      - '7230'
     depends_on:
       - mongodb
+  nginx:
+    image: nginx:alpine
+    hostname: 'nginx'
+    volumes:
+      - ./Nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./Nginx/proxy.conf:/etc/nginx/proxy.conf:ro
+      - ./Nginx/logs/:/var/log/nginx/
+    ports:
+      - '80:80'
+    depends_on:
+      - api
+    restart: always
