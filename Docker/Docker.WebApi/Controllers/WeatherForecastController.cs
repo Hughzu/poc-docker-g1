@@ -23,6 +23,7 @@ public class WeatherForecastController : ControllerBase
     [HttpGet(Name = "GetWeatherForecast")]
     public async Task<IEnumerable<WeatherForecast>> Get()
     {
+        _logger.Log(LogLevel.Information,"Get call");
         return await _weatherService.GetAsync();
     }
     
