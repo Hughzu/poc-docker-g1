@@ -3,11 +3,18 @@ services:
   mongodb:
     image: mongo:5.0
     ports:
-      - 27017:27017
+      - '27017:27017'
     volumes:
       - ~/apps/mongo:/data/db
     environment:
       - MONGO_INITDB_DATABASE=weather
+  cache:
+    image: redis:6.2-alpine
+    restart: always
+    ports:
+      - '6379:6379'
+    volumes:
+      - cache:/data
   api:
     image: api
     build:
@@ -17,6 +24,7 @@ services:
       - '7230'
     depends_on:
       - mongodb
+      - cache
   nginx:
     image: nginx:alpine
     hostname: 'nginx'
@@ -29,3 +37,7 @@ services:
     depends_on:
       - api
     restart: always
+    
+volumes:
+  cache:
+    driver: local    

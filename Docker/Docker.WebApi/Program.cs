@@ -9,6 +9,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.Configure<WeatherDatabaseSettings>(
     builder.Configuration.GetSection("WeatherDatabase"));
 
+builder.Services.AddStackExchangeRedisCache(o =>
+{
+    o.Configuration = "cache:6379";
+});
+
 builder.Services.AddControllers();
 builder.Services.Configure<ForwardedHeadersOptions>(options =>
 {
