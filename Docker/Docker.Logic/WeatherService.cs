@@ -38,16 +38,19 @@ public class WeatherService : IWeatherService
 
     public Task CreateAsync(WeatherForecast newWeatherForecast)
     {
+        _cache.Remove("weatherForecasts:*");
         return _weatherForecastRepository.CreateAsync(newWeatherForecast);
     }
 
     public Task UpdateAsync(int id, WeatherForecast updatedWeatherForecast)
     {
+        _cache.Remove("weatherForecasts:*");
         return _weatherForecastRepository.UpdateAsync(id, updatedWeatherForecast);
     }
 
     public Task RemoveAsync(int id)
     {
+        _cache.Remove("weatherForecasts:*");
         return _weatherForecastRepository.RemoveAsync(id);
     }
     
