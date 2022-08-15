@@ -11,7 +11,7 @@ builder.Services.Configure<WeatherDatabaseSettings>(
 
 builder.Services.AddStackExchangeRedisCache(o =>
 {
-    o.Configuration = "cache:6379";
+    o.Configuration = builder.Configuration.GetSection("Redis").Value;
 });
 
 builder.Services.AddControllers();
