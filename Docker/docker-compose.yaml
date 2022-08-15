@@ -20,6 +20,8 @@ services:
       dockerfile: ./Docker.WebApi/Dockerfile
     ports:
       - '7230'
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
     depends_on:
       - mongodb
       - cache
