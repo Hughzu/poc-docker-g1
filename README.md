@@ -186,3 +186,16 @@ cmd $ docker-compose down :  shuts all containers down and deletes all container
 cmd $ docker-compose up --build : build images before running containers
 cmd $ docker-compose build : build all images referenced in the docker-compose.yaml
 
+# K8s
+
+## Usefull commands to push your image to your hub
+ docker tag api:latest hughze/api:1.0
+ sudo docker push hughze/api:1.0  
+
+## Usefull commands if you are using minikube 
+cmd $ minikube dashboard
+cmd $ minikube start
+cmd $ minikube service mongodb-service
+cmd $ kubectl apply -f=Kubernetes/cache.yaml
+cmd $ kubectl logs api-deployment-6f4cd76854-q4mln
+cmd $ kubectl rollout restart deployment api-deployment
