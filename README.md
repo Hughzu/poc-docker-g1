@@ -189,13 +189,22 @@ cmd $ docker-compose build : build all images referenced in the docker-compose.y
 # K8s
 
 ## Usefull commands to push your image to your hub
+ docker-compose build
  docker tag api:latest hughze/api:1.0
  sudo docker push hughze/api:1.0  
 
 ## Usefull commands if you are using minikube 
 cmd $ minikube dashboard
 cmd $ minikube start
-cmd $ minikube service mongodb-service
+cmd $ minikube service api-service
 cmd $ kubectl apply -f=Kubernetes/cache.yaml
 cmd $ kubectl logs api-deployment-6f4cd76854-q4mln
 cmd $ kubectl rollout restart deployment api-deployment
+
+
+## Deployment commands
+cmd $ kubectl apply -f=cache.yaml
+cmd $ kubectl apply -f=mongodb.yaml
+cmd $ kubectl apply -f=api.yaml 
+
+(si problème pour le StatefulSet -> minikube addons enable default-storageclass)
