@@ -203,8 +203,9 @@ cmd $ kubectl rollout restart deployment api-deployment
 
 
 ## Deployment commands
+minikube addons enable ingress
+minikube addons enable default-storageclass
+
 cmd $ kubectl apply -f=cache.yaml
 cmd $ kubectl apply -f=mongodb.yaml
 cmd $ kubectl apply -f=api.yaml 
-
-(si problème pour le StatefulSet -> minikube addons enable default-storageclass)
