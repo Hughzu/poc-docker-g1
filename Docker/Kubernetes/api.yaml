@@ -16,7 +16,7 @@ spec:
     spec: 
       containers:
         - name: api
-          image: hughze/api:1.0.3
+          image: hughze/api:1.4
 
 ---
 
