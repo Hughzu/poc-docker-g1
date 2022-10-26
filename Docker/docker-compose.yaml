@@ -15,6 +15,7 @@ services:
       - '6379:6379'
   api:
     image: api
+    platform: linux/amd64
     build:
       context: .
       dockerfile: ./Docker.WebApi/Dockerfile
